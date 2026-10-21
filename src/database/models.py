@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 
 from sqlalchemy import String, Float, Text, DECIMAL, UniqueConstraint, Date
 from sqlalchemy.orm import DeclarativeBase, mapped_column, Mapped
@@ -13,7 +13,7 @@ class MovieModel(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(255), nullable=False)
-    date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
+    date: Mapped[date] = mapped_column(Date, nullable=False)
     score: Mapped[float] = mapped_column(Float, nullable=False)
     genre: Mapped[str] = mapped_column(String(255), nullable=False)
     overview: Mapped[str] = mapped_column(Text, nullable=False)
